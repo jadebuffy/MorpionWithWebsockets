@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class='container'>
+        <h1 class="title">Tic Tac Toe avec <span>Socket.io</span></h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 offset-md-3">
+                <div class="alert d-none" role="alert" id="turn-message"></div>
+                <div class="alert d-none" role="alert" id="turn-message2"></div>
+
+                <div class="inscription" id="user-card">
+                    <div class="inscription_body">
+
+                        <form method="POST" id="form">
+                            <div class="formulaire">
+                                <label for="username" class="form-label">Nom d'utilisateur</label>
+                                <input type="text" class="form-control" id="username" minlength="2" maxlength="20"
+                                    placeholder="Saisir votre nom d'utilisateur" required>
+                            </div>
+                            <button class="btn" id="start" type="submit">Créer un salon privée</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card mb-3 d-none" id="rooms-card">
+                    <div class="card-header">Salons disponibles</div>
+                    <ul class="list-group list-group-flush" id="rooms-list"></ul>
+                </div>
+
+                <div class="d-none" id="waiting-area">
+                    <div class="card mb-3">
+                        <div class="card-header">En attente d'un autre joueur</div>
+                        <div class="card-body mx-auto">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body text-center">
+                            Partage ce lien pour inviter quelqu'un à jouer avec toi
+                            <span id="link-to-share"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="board d-none" id="game-card">
+            <div class="row1">
+                <div class="cell" id="cell-1-1"></div>
+                <div class="cell" id="cell-1-2"></div>
+                <div class="cell" id="cell-1-3"></div>
+            </div>
+            <div class="row2">
+                <div class="cell" id="cell-2-1" ></div>
+                <div class="cell" id="cell-2-2" ></div>
+                <div class="cell" id="cell-2-3" ></div>
+            </div>
+            <div class="row3">
+                <div class="cell" id="cell-3-1" ></div>
+                <div class="cell" id="cell-3-2" ></div>
+                <div class="cell" id="cell-3-3" ></div>
+            </div>
+        </div>
+        <button class="reset d-none" id="restart">Rejouer</button>
+    </div>
+    <script src="./jquery/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js" type="text/js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

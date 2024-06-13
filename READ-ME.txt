@@ -1,0 +1,5 @@
+Pour lancer le serveur : 
+    - npm init
+    - npm run start
+
+Technologies utilisées : Node js - Express - Javascript
